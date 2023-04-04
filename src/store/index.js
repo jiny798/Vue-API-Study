@@ -44,11 +44,11 @@ export const store = new Vuex.Store({
                     console.log(err);
                 });
         },
-        FETCH_ASK(context){
+        FETCH_ASK({commit}){
             fetchAskList()
-                .then(res => {
-                    console.log(res);
-                    context.commit('SET_ASK', res.data); //context로 mutation 실행 
+                .then(({data}) => {
+                    console.log(data);
+                    commit('SET_ASK', data); //context로 mutation 실행 
                 })
                 .catch(err => {
                     console.log(err);
