@@ -15,14 +15,7 @@ export default {
   }
   ,
   created(){
-    var vm = this;
-    fetchAskList()
-      .then(function(response){
-        vm.ask = response.data;
-      })
-      .catch(function(error){
-        console.log(error);
-      });
+    this.$store.dispatch('FETCH_ASK');
   },
   
 }
