@@ -43,19 +43,19 @@
 
 <script>
 export default {
-    created(){
-        // this.$store.dispatch('FETCH_NEWS');
-        const name = this.$route.name;
-        let ACTION_NAME = '';
-        if(name === 'news'){
-            ACTION_NAME = 'FETCH_NEWS';
-        }else if(name === 'ask'){
-            ACTION_NAME = 'FETCH_ASK';
-        }else if(name ==='jobs'){
-            ACTION_NAME = 'FETCH_JOBS';
-        }
-        this.$store.dispatch(ACTION_NAME);
-    },
+    // created(){
+    //     // this.$store.dispatch('FETCH_NEWS');
+    //     const name = this.$route.name;
+    //     let ACTION_NAME = '';
+    //     if(name === 'news'){
+    //         ACTION_NAME = 'FETCH_NEWS';
+    //     }else if(name === 'ask'){
+    //         ACTION_NAME = 'FETCH_ASK';
+    //     }else if(name ==='jobs'){
+    //         ACTION_NAME = 'FETCH_JOBS';
+    //     }
+    //     this.$store.dispatch(ACTION_NAME);
+    // },
     computed:{
         // eslint-disable-next-line vue/return-in-computed-property
         listItems() {
