@@ -4,20 +4,14 @@
                 <i class="fa-solid fa-user"></i>
             </div>
             <div class="user-description">
-                <!-- <div>
-                   username :  {{info.id}}
-                </div> -->
-                <slot name="username">
-
-                </slot>
+                <slot name="username"></slot>
+                
                 <div class="time">
-                   <!-- time :  {{info.created}} -->
-                   <slot name="time">
-
-                   </slot>
+                   <slot name="time"></slot>
+                   <slot name="karma"></slot>
                 </div>
 
-                <slot name="karma"></slot>
+                
             </div>
         </div>    
 </template>
