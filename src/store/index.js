@@ -10,7 +10,8 @@ export const store = new Vuex.Store({
         news:[],
         jobs:[],
         ask:[],
-        user:{}
+        user:{},
+        item:[]
 
     },
     mutations: mutations, //속성:속성 같은 변수 타입이면 줄이기 가능 속성 : 문자열 은 불가 
