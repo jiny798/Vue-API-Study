@@ -7,5 +7,8 @@ export default{
     },
     SET_ASK(state, ask) { //첫인자는 state
         state.ask = ask;
+    },
+    SET_USER(state,user){
+        state.user=user;
     }
 }

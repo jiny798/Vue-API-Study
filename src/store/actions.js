@@ -1,4 +1,4 @@
-import { fetchNewList, fetchAskList, fetchJobsList } from '../api/index.js';
+import { fetchNewList, fetchAskList, fetchJobsList,fetchUserInfo } from '../api/index.js';
 export default {
     FETCH_NEWS(context) {
         fetchNewList()
@@ -25,6 +25,15 @@ export default {
             .then(({ data }) => {
                 console.log(data);
                 commit('SET_ASK', data); //context로 mutation 실행 
+            })
+            .catch(err => {
+                console.log(err);
+            });
+    },
+    FETCH_USER({commit},name){
+        fetchUserInfo(name)
+            .then(({data}) =>{
+                commit('SET_USER',data);
             })
             .catch(err => {
                 console.log(err);
