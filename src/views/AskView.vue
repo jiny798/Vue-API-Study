@@ -27,7 +27,7 @@
 <script>
 // import {mapGetters} from 'vuex';
 import ListItem from '../components/ListItem.vue';
-
+import bus from '../utils/bus.js';
 export default {
   components:{
     ListItem,
@@ -54,7 +54,18 @@ export default {
   }
   ,
   created(){
-    this.$store.dispatch('FETCH_ASK');
+    
+    bus.$emit('start:spinner');
+    setTimeout(()=>{
+      this.$store.dispatch('FETCH_ASK')
+      .then(()=>{
+        console.log('API fetched');
+        bus.$emit('end:spinner');
+      })
+      .catch((err)=>{
+        console.log(err);
+      });
+    },1500)
   },
   
 }

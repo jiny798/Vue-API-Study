@@ -3,8 +3,8 @@ export default {
     FETCH_NEWS(context) {
         fetchNewList()
             .then(res => {
-                console.log(res);
                 context.commit('SET_NEWS', res.data); //context로 mutation 실행 
+                return res; //프로미스 객체 반환
             })
             .catch(err => {
                 console.log(err);

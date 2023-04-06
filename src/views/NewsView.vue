@@ -12,8 +12,18 @@ export default {
   components: { ListItem },
   created(){
     bus.$emit('start:spinner');
-    this.$store.dispatch('FETCH_NEWS');
-    bus.$emit('end:spinner');
+    setTimeout(()=>{
+      this.$store.dispatch('FETCH_NEWS')
+      .then(()=>{
+        console.log('API fetched');
+        bus.$emit('end:spinner');
+      })
+      .catch((err)=>{
+        console.log(err);
+      });
+    },1500)
+    
+    
 
   }
 
