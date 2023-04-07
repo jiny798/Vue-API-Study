@@ -18,8 +18,13 @@ function fetchJobsList() {
     return axios.get(`${config.baseUrl}/show/1.json`);
 }
 
-function fetchList(pageName){
-    return axios.get(`${config.baseUrl}/${pageName}/1.json`);
+async function fetchList(pageName){
+    try{
+        return axios.get(`${config.baseUrl}/${pageName}/1.json`);
+    }catch(err){
+        console.log(err);
+    }
+    
 }
 
 function fetchUserInfo(username){

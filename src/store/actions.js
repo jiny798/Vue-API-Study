@@ -1,4 +1,4 @@
-import { //fetchNewList,
+import { fetchNewList,
          //fetchAskList, 
          //fetchJobsList,
          fetchUserInfo,
@@ -15,6 +15,11 @@ export default {
     //             console.log(err);
     //         });
     // },
+    async FETCH_NEWS(context) {
+       const response = await fetchNewList();
+       context.commit('SET_NEWS',response.data);
+       return response; // '2131' 이런걸 리턴해도 프로미스가 리턴된다
+    },
     // FETCH_JOBS(context) {
     //     return fetchJobsList()
     //         .then(({ data }) => {  //res 내부 필드 바로 받아오기 
@@ -53,16 +58,23 @@ export default {
                 console.log(err);
             });
     },
-    FETCH_LIST({commit},pageName){
-       return fetchList(pageName) 
-           .then((response) =>{
-                console.log(4);
-                commit('SET_LIST',response.data); 
-                return response
-            })
-            .catch(err => {
-                console.log(err);
-            });
+    // FETCH_LIST({commit},pageName){
+    //    return fetchList(pageName) 
+    //        .then((response) =>{
+    //             console.log(4);
+    //             commit('SET_LIST',response.data); 
+    //             return response
+    //         })
+    //         .catch(err => {
+    //             console.log(err);
+    //         });
+    // }
+    async FETCH_LIST({ commit }, pageName) {
+        const response = await fetchList(pageName)
+        console.log(4);
+        
+        commit('SET_LIST',response.data);
+        return response;
     }
 
 
