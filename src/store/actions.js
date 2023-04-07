@@ -1,7 +1,7 @@
 import { fetchNewList, fetchAskList, fetchJobsList,fetchUserInfo,fetchCommentItem,fetchList } from '../api/index.js';
 export default {
     FETCH_NEWS(context) {
-        fetchNewList()
+        return fetchNewList()
             .then(res => {
                 context.commit('SET_NEWS', res.data); //context로 mutation 실행 
                 return res; //프로미스 객체 반환
@@ -11,7 +11,7 @@ export default {
             });
     },
     FETCH_JOBS(context) {
-        fetchJobsList()
+        return fetchJobsList()
             .then(({ data }) => {  //res 내부 필드 바로 받아오기 
                 console.log(data);
                 context.commit('SET_JOBS', data); //context로 mutation 실행 
@@ -21,7 +21,7 @@ export default {
             });
     },
     FETCH_ASK({ commit }) {
-        fetchAskList()
+        return fetchAskList()
             .then(({ data }) => {
                 console.log(data);
                 commit('SET_ASK', data); //context로 mutation 실행 
@@ -31,7 +31,7 @@ export default {
             });
     },
     FETCH_USER({commit},name){
-        fetchUserInfo(name)
+        return fetchUserInfo(name)
             .then(({data}) =>{
                 commit('SET_USER',data);
             })
@@ -40,7 +40,7 @@ export default {
             });
     },
     FETCH_ITEM({commit},id){
-        fetchCommentItem(id)
+        return fetchCommentItem(id)
             .then(({data})=> {
                 commit('SET_ITEM',data);
             })
@@ -49,7 +49,7 @@ export default {
             });
     },
     FETCH_LIST({commit},pageName){
-        fetchList(pageName)
+       return fetchList(pageName)
             .then(({data}) =>{
                 commit('SET_LIST',data);
             })
