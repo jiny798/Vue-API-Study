@@ -11,7 +11,6 @@ export default function createListView(name) {
         },
         created() {
             bus.$emit('start:spinner');
-            setTimeout(() => {
                 this.$store.dispatch('FETCH_LIST',this.$route.name)
                     .then(() => {
                         console.log('API fetched');
@@ -20,7 +19,6 @@ export default function createListView(name) {
                     .catch((err) => {
                         console.log(err);
                     });
-            }, 1500)
         }
         
     }
