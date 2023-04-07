@@ -34,7 +34,7 @@ export const router = new VueRouter({
                     .then(() => {
                         console.log('API fetched');
                         console.log(5);
-                        bus.$emit('end:spinner');
+                        // bus.$emit('end:spinner');
                         next() // dispatch 보내고 다 끝나고나서 next 호출 
                     })
                     .catch((err) => {
@@ -57,7 +57,7 @@ export const router = new VueRouter({
                     .then(() => {
                         console.log('API fetched');
                         console.log(5);
-                        bus.$emit('end:spinner');
+                        // bus.$emit('end:spinner');
                         next() // dispatch 보내고 다 끝나고나서 next 호출 
                     })
                     .catch((err) => {
@@ -80,7 +80,7 @@ export const router = new VueRouter({
                     .then(() => {
                         console.log('API fetched');
                         console.log(5);
-                        bus.$emit('end:spinner');
+                        // bus.$emit('end:spinner');
                         next() // dispatch 보내고 다 끝나고나서 next 호출 
                     })
                     .catch((err) => {
