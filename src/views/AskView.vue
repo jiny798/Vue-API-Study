@@ -27,7 +27,8 @@
 <script>
 // import {mapGetters} from 'vuex';
 import ListItem from '../components/ListItem.vue';
-import bus from '../utils/bus.js';
+// import bus from '../utils/bus.js';
+import ListMixin from '../mixins/ListMixin.js';
 export default {
   components:{
     ListItem,
@@ -53,20 +54,20 @@ export default {
 
   }
   ,
-  created(){
-    
-    bus.$emit('start:spinner');
-    setTimeout(()=>{
-      this.$store.dispatch('FETCH_ASK')
-      .then(()=>{
-        console.log('API fetched');
-        bus.$emit('end:spinner');
-      })
-      .catch((err)=>{
-        console.log(err);
-      });
-    },1500)
-  },
+  mixins:[ListMixin],
+  // created(){
+  //   bus.$emit('start:spinner');
+  //   setTimeout(()=>{
+  //     this.$store.dispatch('FETCH_ASK')
+  //     .then(()=>{
+  //       console.log('API fetched');
+  //       bus.$emit('end:spinner');
+  //     })
+  //     .catch((err)=>{
+  //       console.log(err);
+  //     });
+  //   },1500)
+  // },
   
 }
 </script>
