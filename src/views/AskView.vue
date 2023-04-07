@@ -28,7 +28,7 @@
 // import {mapGetters} from 'vuex';
 import ListItem from '../components/ListItem.vue';
 // import bus from '../utils/bus.js';
-import ListMixin from '../mixins/ListMixin.js';
+// import ListMixin from '../mixins/ListMixin.js';
 export default {
   components:{
     ListItem,
@@ -54,7 +54,7 @@ export default {
 
   }
   ,
-  mixins:[ListMixin],
+  // mixins:[ListMixin],
   // created(){
   //   bus.$emit('start:spinner');
   //   setTimeout(()=>{
