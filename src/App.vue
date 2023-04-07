@@ -63,11 +63,12 @@ a:hover{
 
 .page-enter-active,
 .page-leave-active {
-  transition: opacity 0.5s ease;
+  transition: opacity .5s ;
 }
 
-.page-enter-from,
+.page-enter,
 .page-leave-to {
   opacity: 0;
 }
+
 </style>
