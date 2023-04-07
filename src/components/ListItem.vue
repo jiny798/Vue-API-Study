@@ -2,7 +2,7 @@
   <div>
 
     <ul class="news-list">
-      <li class="post" v-for="(item,index) in this.$store.state.list" v-bind:key="index"> 
+      <li class="post" v-for="(item,index) in list" v-bind:key="index"> 
         <!--포인트 영역-->
         <div class="points">
           {{item.points || 0}}
@@ -45,11 +45,11 @@
 export default {
   data() {
       return {
-        listItems2: {},
+        list: {},
       };
     },
      created(){
-      this.listItems2 = this.$store.state.list;
+      this.list = this.$store.state.list;
       console.log('created');
     //     // this.$store.dispatch('FETCH_NEWS');
     //     const name = this.$route.name;
@@ -67,7 +67,7 @@ export default {
         // eslint-disable-next-line vue/return-in-computed-property
         listItems() {
           console.log('computed');
-         // return this.$store.state.list; //
+          return this.$store.state.list; //
         //     const name = this.$route.name;
         //     if(name === 'news'){
         //         return this.$store.state.news;
