@@ -5,7 +5,7 @@
       <router-view></router-view>
     </transition>  
     <spinner-load :loading='loadingStatus'></spinner-load>
-    <canvas id="myChart"></canvas>
+    <bar-chart></bar-chart>
   </div>
 </template>
 
@@ -13,35 +13,13 @@
 import ToolBar from './components/ToolBar.vue';
 import SpinnerLoad from './components/SpinnerLoad.vue';
 import bus from './utils/bus.js';
-import Chart from 'chart.js/auto';
+import BarChart from './components/BarChart.vue';
 
 export default {
-  mounted(){
-    const ctx = document.getElementById('myChart');
-
-    new Chart(ctx, {
-      type: 'bar',
-      data: {
-        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
-        datasets: [{
-          label: '# of Votes',
-          data: [12, 19, 3, 5, 2, 3],
-          borderWidth: 1
-        }]
-      },
-      options: {
-        scales: {
-          y: {
-            beginAtZero: true
-          }
-        }
-      }
-    });
-  }
-  ,
   components: {
     ToolBar,
-    SpinnerLoad
+    SpinnerLoad,
+    BarChart
   },
   data(){
     return{
