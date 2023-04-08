@@ -5,7 +5,7 @@
       <router-view></router-view>
     </transition>  
     <spinner-load :loading='loadingStatus'></spinner-load>
-    <bar-chart></bar-chart>
+    <bar-chart :propsdata="chartDataSet"></bar-chart>
   </div>
 </template>
 
@@ -24,6 +24,11 @@ export default {
   data(){
     return{
       loadingStatus: false,
+      chartDataSet: [{
+          label: '# of Votes',
+          data: [12, 19, 3, 5, 2, 3],
+          borderWidth: 1
+        }],
     };
   },
   methods:{
@@ -37,6 +42,10 @@ export default {
   created(){
     bus.$on('start:spinner', this.startSpinner);
     bus.$on('end:spinner', this.endSpinner);
+
+    // axios.get('charts/line/1')
+    //   .then(response => this.chartDataSet =  response.data)
+    //   .catch(err => console.log(err))
 
   },
   beforeDestroy(){
