@@ -1,4 +1,6 @@
-# vue-news
+# VUE API 통신 학습
+Vue.js 완벽 가이드 - 실습과 리팩토링으로 배우는 실전 개념 (인프런)
+
 
 ## Project setup
 ```
